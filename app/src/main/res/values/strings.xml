@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Say Bings</string>
+    <string name="add_movement_edtxt_hint">Add Movement</string>
+    <string name="add_movement_checkbox">Saving</string>
+    <string name="add_movement_button">Add</string>
+    <string name="home_add_movement_button">Add movement</string>
 </resources>

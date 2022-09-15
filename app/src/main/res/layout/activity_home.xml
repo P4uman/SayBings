@@ -20,42 +20,6 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="1200 €" />
 
-        <TextView
-            android:id="@+id/txt_label_balance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_space_normal"
-            android:layout_marginTop="@dimen/common_space_small"
-            android:textSize="@dimen/common_text_small"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_savings"
-            tools:text="Current balance: 1422.00 €" />
-
-        <EditText
-            android:id="@+id/edtxt_movement"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_space_normal"
-            android:layout_marginTop="@dimen/common_space_big"
-            android:layout_marginEnd="@dimen/common_space_normal"
-            android:hint="Add movement"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_label_balance" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/sw_saving_spending"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_space_normal"
-            android:layout_marginTop="@dimen/common_space_normal"
-            android:layout_marginEnd="@dimen/common_space_normal"
-            android:text="Saving"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edtxt_movement" />
-
         <Button
             android:id="@+id/btn_add"
             android:layout_width="0dp"
@@ -63,27 +27,11 @@
             android:layout_marginStart="@dimen/common_text_huge"
             android:layout_marginEnd="@dimen/common_text_huge"
             android:layout_marginBottom="@dimen/common_text_huge"
-            android:text="ADD"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/home_add_movement_button"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/common_space_big"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edtxt_movement"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <Button
-            android:id="@+id/btn_check"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_text_huge"
-            android:layout_marginEnd="@dimen/common_text_huge"
-            android:layout_marginBottom="@dimen/common_text_huge"
-            android:text="Check movements"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_add"
-            app:layout_constraintVertical_bias="1" />
-
+            app:layout_constraintTop_toBottomOf="@id/txt_savings" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

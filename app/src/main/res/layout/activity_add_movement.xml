@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edtxt_movement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_space_normal"
+        android:layout_marginTop="@dimen/common_space_big"
+        android:layout_marginEnd="@dimen/common_space_normal"
+        android:hint="@string/add_movement_edtxt_hint"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
+
+    <CheckBox
+        android:id="@+id/chbx_saving"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edtxt_movement"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/add_movement_checkbox"
+        android:layout_marginStart="@dimen/common_space_normal"
+        android:layout_marginEnd="@dimen/common_space_normal"
+        android:layout_marginTop="@dimen/common_space_big"/>
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/chbx_saving"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/common_space_big"
+        android:layout_marginEnd="@dimen/common_space_big"
+        android:text="@string/add_movement_button"
+        android:layout_marginTop="@dimen/common_space_big"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

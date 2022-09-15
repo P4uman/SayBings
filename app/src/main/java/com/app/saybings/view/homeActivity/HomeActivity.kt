@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
+import com.app.saybings.base.view.BaseActivity
 import com.app.saybings.data.database.MovementsRepository
 import com.app.saybings.data.database.SayBingsDatabase
 import com.app.saybings.databinding.ActivityHomeBinding
@@ -17,25 +18,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 
-
-private const val DATABASE_NAME = "SayBingsDB"
-
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
     private val coroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
-    private lateinit var binding: ActivityHomeBinding
     private lateinit var getAllMovementUseCase: GetAllMovementsUseCase
     private lateinit var addMovementUseCase: AddMovementUseCase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(LayoutInflater.from(this))
-        setContentView(binding.root)
 
-        val db = Room.databaseBuilder(this, SayBingsDatabase::class.java, DATABASE_NAME).build()
-
-        getAllMovementUseCase = GetAllMovementsUseCase(MovementsRepository(db.getMovementDao()))
-        addMovementUseCase = AddMovementUseCase(MovementsRepository(db.getMovementDao()))
+        getAllMovementUseCase = compositionRoot.getAllMovementUseCase
+        addMovementUseCase = compositionRoot.addMovementUseCase
 
         coroutineScope.launch {
             updateBalance(getAllMovementUseCase.invoke())
@@ -84,4 +77,7 @@ class HomeActivity : AppCompatActivity() {
 
         binding.txtSavings.text = balance.toString()
     }
+
+    override fun getDataBinding(): ActivityHomeBinding =
+        ActivityHomeBinding.inflate(LayoutInflater.from(this))
 }
